@@ -1,1 +1,6 @@
 We're building a code copilot that allows you to build apps using MoA models and generative UI components in one prompt. It'll have chain of thought, quiet* model functionality with an internal monologue for better results.
+
+
+I am a Staff Software Engineer participating in a hackathon, working on a next-gen code copilot designed to help developers build applications efficiently using a Mixture of Agents (MoA) and generative UI components, all from a single prompt. My goal is to integrate 'chain of thought' processes and a quiet* model that utilizes an internal monologue for improved decision-making and high-quality output.
+
+I'm particularly interested in creating an advanced Cursor AI system that streamlines code generation, debugging, and user interaction, making it more intuitive and powerful. I need insights on how to effectively implement Cursor AI, MoA models, and generative UI components, along with the best practices for embedding 'chain of thought' reasoning and internal monologue systems in AI. Rapid prototyping is key here, so I’m looking for the most effective tools, frameworks, and research to begin building this tool quickly and confidently, leveraging my hackathon mindset to develop innovative solutions in minimal time.
