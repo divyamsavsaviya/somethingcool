@@ -1,2 +1,1 @@
-# somethingcool
-Repository for building "Something Cool" in 3 days with lots of coffee at Founders, Inc.
+We're building a code copilot that allows you to build apps using MoA models and generative UI components in one prompt. It'll have chain of thought, quiet* model functionality with an internal monologue for better results.
