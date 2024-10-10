@@ -1,10 +1,15 @@
 import flet as ft
 from neurum import Neurum
+from googlesearch import search
 
 n = Neurum('vansh')
 
 def main(page: ft.Page):
     conversation_history = []
+
+    def search_web(query):
+        results = search(query, num_results=5)
+        return "\n".join(results)
 
     def send_message(e):
         if new_message.value:
@@ -38,8 +43,11 @@ AI:"""
             bot_message = f"AI: {res}"
             conversation_history.append(bot_message)
 
-            # Display bot response
-            chat_list.controls.append(ft.Text(bot_message))
+            # Display bot response as plain text
+            chat_list.controls.append(ft.Text(
+                bot_message,
+                selectable=True,
+            ))
             
             # Clear the input field
             new_message.value = ""
@@ -51,7 +59,6 @@ AI:"""
     chat_list = ft.ListView(
         expand=True,
         spacing=10,
-        auto_scroll=True
     )
 
     # Create an input field for new messages
