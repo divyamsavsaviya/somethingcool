@@ -1,0 +1,36 @@
+# Python
+__pycache__/
+*.py[cod]
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+*.egg-info/
+.eggs/
+*.pyc
+
+# Virtual Environment
+venv/
+env/
+.venv/
+.env/
+
+# IDE-specific files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS-specific files
+.DS_Store
+Thumbs.db
+
+# Flet-specific
+flet-dist/
+
+# Neurum-specific (if any specific files need to be ignored)
+
+# Miscellaneous
+*.log
+*.sqlite3
