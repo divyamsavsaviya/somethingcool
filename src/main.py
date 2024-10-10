@@ -1,7 +1,7 @@
 import flet as ft
-from ui.chat_interface import create_chat_ui
-from logic.chat_handler import ChatHandler
-from utils.ai_service import NeurumAI
+from src.ui.chat_interface import create_chat_ui
+from src.logic.chat_handler import ChatHandler
+from src.utils.ai_service import NeurumAI
 
 def main(page: ft.Page):
     ai_service = NeurumAI('vansh')

@@ -1,4 +1,6 @@
 import flet as ft
+import re
+from src.ui.chat_interface import create_code_block_with_copy
 
 class ChatHandler:
     def __init__(self, ai_service):
@@ -18,7 +20,21 @@ class ChatHandler:
     def _add_message_to_chat(self, sender, message, chat_list):
         formatted_message = f"{sender}: {message}"
         self.conversation_history.append(formatted_message)
-        chat_list.controls.append(ft.Text(formatted_message))
+        
+        if sender == "AI":
+            code_blocks = re.findall(r'```(\w*)\n(.*?)```', message, re.DOTALL)
+            if code_blocks:
+                chat_list.controls.append(ft.Text(f"{sender}:"))
+                for language, code in code_blocks:
+                    chat_list.controls.append(create_code_block_with_copy(code.strip(), language))
+                remaining_text = re.sub(r'```(\w*)\n(.*?)```', '', message, flags=re.DOTALL)
+                if remaining_text.strip():
+                    chat_list.controls.append(ft.Text(remaining_text.strip()))
+            else:
+                chat_list.controls.append(ft.Text(formatted_message))
+        else:
+            chat_list.controls.append(ft.Text(formatted_message))
+        
         chat_list.update()
 
     def _add_chain_of_thoughts_to_chat(self, thoughts, chat_list):
